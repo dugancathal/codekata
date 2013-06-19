@@ -16,26 +16,25 @@ class ChopTest < Minitest::Test
     assert_equal(-1, chop(4, [1, 3, 5, 7]))
     assert_equal(-1, chop(6, [1, 3, 5, 7]))
     assert_equal(-1, chop(8, [1, 3, 5, 7]))
-    assert_equal(0,  chop(1, [1]))
   end
 
-  # def test_found_chop
-    # assert_equal(0,  chop(1, [1, 3, 5]))
-    # assert_equal(1,  chop(3, [1, 3, 5]))
-    # assert_equal(2,  chop(5, [1, 3, 5]))
+  def test_found_chop
+    assert_equal(0,  chop(1, [1]))
+    assert_equal(0,  chop(1, [1, 3, 5]))
+    assert_equal(1,  chop(3, [1, 3, 5]))
+    assert_equal(2,  chop(5, [1, 3, 5]))
 
-    # assert_equal(0,  chop(1, [1, 3, 5, 7]))
-    # assert_equal(1,  chop(3, [1, 3, 5, 7]))
-    # assert_equal(2,  chop(5, [1, 3, 5, 7]))
-    # assert_equal(3,  chop(7, [1, 3, 5, 7]))
-  # end
+    assert_equal(0,  chop(1, [1, 3, 5, 7]))
+    assert_equal(1,  chop(3, [1, 3, 5, 7]))
+    assert_equal(2,  chop(5, [1, 3, 5, 7]))
+    assert_equal(3,  chop(7, [1, 3, 5, 7]))
+  end
 
   def test_midpoint
-    assert_equal 0, midpoint([])
-    assert_equal 0, midpoint([0])
-    assert_equal 0, midpoint([2, 3])
-    assert_equal 1, midpoint([3, 4, 5])
-    assert_equal 1, midpoint([4, 5, 6, 7])
-    assert_equal 2, midpoint([5, 6, 7, 8, 9])
+    assert_equal 0, midpoint(0, 1)
+    assert_equal 3, midpoint(1, 5)
+    assert_equal 2, midpoint(2, 2)
+    assert_equal 3, midpoint(3, 4)
+    assert_equal 102, midpoint(4, 200)
   end
 end
