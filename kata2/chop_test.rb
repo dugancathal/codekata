@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require File.expand_path('../chop.rb', __FILE__)
+require File.expand_path("../chop_#{ARGV[0]}", __FILE__)
 
 class ChopTest < Minitest::Test
   def test_not_found_chop
@@ -28,13 +28,5 @@ class ChopTest < Minitest::Test
     assert_equal(1,  chop(3, [1, 3, 5, 7]))
     assert_equal(2,  chop(5, [1, 3, 5, 7]))
     assert_equal(3,  chop(7, [1, 3, 5, 7]))
-  end
-
-  def test_midpoint
-    assert_equal 0, midpoint(0, 1)
-    assert_equal 3, midpoint(1, 5)
-    assert_equal 2, midpoint(2, 2)
-    assert_equal 3, midpoint(3, 4)
-    assert_equal 102, midpoint(4, 200)
   end
 end
