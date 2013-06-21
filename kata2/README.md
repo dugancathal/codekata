@@ -34,4 +34,5 @@ in the Kata spec.
 
 ## Functional - Implementation No. 3
 
-
+Almost identical to the Recursive implementation... This one was ridiculously
+easy.
