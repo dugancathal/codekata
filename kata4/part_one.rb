@@ -8,7 +8,11 @@ class WeatherHandler
   end
 
   def day_with_smallest_spread
-    calculate_spread_for_rows(tableize(text)).min_by {|row| row.last }.first
+    spreads.min_by {|row| row.last }.first
+  end
+
+  def spreads
+    calculate_spread_for_rows(tableize(text))
   end
 
   private
